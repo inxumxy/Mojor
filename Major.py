@@ -188,7 +188,7 @@ def check_squad_status(user_id, access_token, proxies=None):
         return None
 
 def join_squad(access_token, proxies=None):
-    squad_id = 2210217271
+    squad_id = 1006503122
     url_join_squad = f"https://major.glados.app/api/squads/{squad_id}/join/"
     headers_join_squad = {
         "Accept": "application/json",
@@ -337,12 +337,12 @@ def main():
                     print(f"{Fore.RED + Style.BRIGHT}Failed to perform daily task with status code: {response_daily.status_code}")
 
                 squad_id = check_squad_status(user_id, access_token, proxies=proxy_dict)
-                if squad_id == 2210217271:
+                if squad_id == 1006503122:
                     print("", end = "")
                 else:
                     if join_squad(access_token, proxies=proxy_dict):
                         squad_id_after = check_squad_status(user_id, access_token, proxies=proxy_dict)
-                        if squad_id_after == 2210217271:
+                        if squad_id_after == 1006503122:
                             print(f"{Fore.GREEN + Style.BRIGHT}Squad Joined Successfully")
                         else:
                             print(f"{Fore.RED + Style.BRIGHT}Failed to join squad.")
